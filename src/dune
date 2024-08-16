@@ -1,0 +1,20 @@
+(library 
+  (name mermaid_defs)
+  (modules Defs)
+  (preprocess (pps ppx_deriving.show))
+)
+
+(library
+ (name ppx_mermaid)
+ (kind ppx_deriver)
+ (libraries ppxlib mermaid_defs)
+ (modules ppx_mermaid)
+ (preprocess
+  (staged_pps ppxlib.metaquot ppx_deriving.show))
+  )
+
+
+(env
+ (dev
+  (flags
+   (:standard -w -30))))

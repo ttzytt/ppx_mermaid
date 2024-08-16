@@ -1,0 +1,13 @@
+(test
+ (preprocess
+ (staged_pps ppx_mermaid ppx_deriving.show))
+ (name test_mermaid)
+ (libraries ppx_mermaid)
+)
+
+; (test
+;  (name test_stringify)
+;  (preprocess
+;   (pps ppx_stringify ppx_deriving.show))
+; )
+
